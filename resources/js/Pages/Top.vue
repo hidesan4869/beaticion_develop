@@ -27,7 +27,7 @@ function handleImageError() {
 </script>
 
 <template>
-    <Head title="Welcome" />
+    <Head title="トップ" />
     <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
         <img
             id="background"
@@ -55,7 +55,7 @@ function handleImageError() {
                     <nav v-if="canLogin" class="-mx-3 flex flex-1 justify-end">
                         <Link
                             v-if="$page.props.auth.user"
-                            :href="route('profile.edit')"
+                            :href="route('mypage')"
                             class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                         >
                             マイページ
@@ -66,7 +66,7 @@ function handleImageError() {
                                 :href="route('login')"
                                 class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                             >
-                                Log in
+                                ログイン
                             </Link>
 
                             <Link
@@ -74,7 +74,7 @@ function handleImageError() {
                                 :href="route('register')"
                                 class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                             >
-                                Register
+                                新規登録
                             </Link>
                         </template>
                     </nav>

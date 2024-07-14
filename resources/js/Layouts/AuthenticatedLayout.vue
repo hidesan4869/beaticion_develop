@@ -20,16 +20,16 @@ const showingNavigationDropdown = ref(false);
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
-                                <Link :href="route('dashboard')">
+                                <a href="/">
                                     <ApplicationLogo
                                         class="block h-9 w-auto fill-current text-gray-800"
                                     />
-                                </Link>
+                                </a>
                             </div>
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                                <NavLink :href="route('mypage')" :active="route().current('mypage')">
                                     マイページ
                                 </NavLink>
                             </div>
@@ -64,10 +64,9 @@ const showingNavigationDropdown = ref(false);
                                     </template>
 
                                     <template #content>
-                                        <DropdownLink :href="route('profile.edit')"> Profile </DropdownLink>
-                                        <DropdownLink :href="route('logout')" method="post" as="button">
-                                            Log Out
-                                        </DropdownLink>
+                                        <DropdownLink :href="route('mypage')">マイページ</DropdownLink>
+                                        <DropdownLink :href="route('profile.edit')">アカウント情報の編集</DropdownLink>
+                                        <DropdownLink :href="route('logout')" method="post" as="button">ログアウト</DropdownLink>
                                     </template>
                                 </Dropdown>
                             </div>
@@ -112,8 +111,8 @@ const showingNavigationDropdown = ref(false);
                     class="sm:hidden"
                 >
                     <div class="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                            Dashboard
+                        <ResponsiveNavLink :href="route('mypage')" :active="route().current('mypage')">
+                            マイページ
                         </ResponsiveNavLink>
                     </div>
 
