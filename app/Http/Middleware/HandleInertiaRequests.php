@@ -36,4 +36,17 @@ class HandleInertiaRequests extends Middleware
             ],
         ];
     }
+
+    /**
+     * Get the route the user should be redirected to when they are not authenticated.
+     */
+    protected function redirectTo($request)
+    {
+        if (! $request->expectsJson()) {
+            if ($request->is('admin/*')) {
+                return route('admin.login');
+            }
+            return route('login');
+        }
+    }
 }
